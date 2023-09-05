@@ -5,7 +5,7 @@ class Account
   public string Number { get; private set; }
   public AccountName Holder { get; set; }
   public AccountPin Pin { get; private set; }
-  public double Balance { get; private set; }
+  public double Balance { get; set; }
   public double WithdrawLimit { get; private set; }
   private const int NumberSize = 4;
 
