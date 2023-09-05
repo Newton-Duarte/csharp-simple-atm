@@ -1,6 +1,6 @@
 class AccountPin
 {
-  public string Pin { get; set; }
+  public string Number { get; set; }
 
   public AccountPin(string pin)
   {
@@ -8,6 +8,11 @@ class AccountPin
     if (pin.Length < 4 || pin.Length > 4)
       throw new ArgumentException("Pin must have 4 characters");
 
-    Pin = pin;
+    Number = pin;
+  }
+
+  public override string ToString()
+  {
+    return Number;
   }
 }
