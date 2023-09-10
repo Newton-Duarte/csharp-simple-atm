@@ -1,5 +1,3 @@
-using System.Text;
-
 class Account
 {
   public string Number { get; private set; }
@@ -7,30 +5,13 @@ class Account
   public AccountPin Pin { get; private set; }
   public double Balance { get; set; }
   public double WithdrawLimit { get; private set; }
-  private const int NumberSize = 4;
 
   public Account(string holder, string pin) {
-    Number = GenerateAccountNumber();
+    Number = AccountUtils.GenerateAccountNumber();
     Holder = new AccountName(holder);
     Pin = new AccountPin(pin);
     Balance = 0.00;
     WithdrawLimit = 1000.00;
-  }
-
-  private string GenerateAccountNumber()
-  {
-    var rand = new Random();
-    var randomNumber = new StringBuilder();
-
-    int counter = 0;
-    while (counter < NumberSize)
-    {
-      randomNumber.Append(rand.Next(10));
-
-      counter++;
-    }
-
-    return randomNumber.ToString();
   }
 
   public override string ToString()
