@@ -13,15 +13,15 @@ static class MainMenuView
 
   static void Menu()
   {
-    System.Console.WriteLine("1 - Enter");
-    System.Console.WriteLine("2 - Register");
-    System.Console.WriteLine("3 - Exit");
+    Console.WriteLine("1 - Enter");
+    Console.WriteLine("2 - Register");
+    Console.WriteLine("3 - Exit");
     GetOption();
   }
 
   static void GetOption()
   {
-    System.Console.Write("Option: ");
+    Console.Write("Option: ");
     try
     {
       int option = int.Parse(Console.ReadLine());
@@ -29,7 +29,7 @@ static class MainMenuView
     }
     catch (Exception e)
     {
-      System.Console.WriteLine($"Exception: {e.Message}");
+      Console.WriteLine($"Exception: {e.Message}");
     }
   }
 
@@ -38,16 +38,16 @@ static class MainMenuView
     switch(option)
     {
       case 1:
-        TextUtils.Title("\t 1 - Enter");
+        AccountMenuView.Enter();
         break;
       case 2:
-        TextUtils.Title("\t 2 - Register");
+        AccountMenuView.Register();
         break;
       case 3:
-        TextUtils.Title("\t Thank you");
+        TextUtils.Title("\tThank you");
         break;
       default:
-        System.Console.WriteLine("Invalid option");
+        TextUtils.Title("\tInvalid option");
         GetOption();
         break;
     }
