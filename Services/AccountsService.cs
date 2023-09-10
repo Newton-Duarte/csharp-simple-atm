@@ -1,15 +1,15 @@
-class AccountsService
+static class AccountsService
 {
-  private List<Account> accounts = new();
+  private static readonly List<Account> accounts = new();
 
-  public AccountsService() {}
-
-  public void AddAccount(Account account)
+  public static void AddAccount(string holderName, string accountPIN)
   {
+    var account = new Account(holderName, accountPIN);
     accounts.Add(account);
+    Console.WriteLine(account);
   }
 
-  public Account? GetAccount(string number)
+  public static Account? GetAccount(string number)
   {
     var account = accounts.Find(a => a.Number == number);
     return account;
