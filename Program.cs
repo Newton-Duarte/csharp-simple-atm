@@ -4,5 +4,5 @@
 }
 catch (Exception e)
 {
-  System.Console.WriteLine($"{e.GetType()}: {e.Message}");
+  Console.WriteLine($"{e.GetType()}: {e.Message}");
 }
