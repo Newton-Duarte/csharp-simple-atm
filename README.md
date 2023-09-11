@@ -2,14 +2,14 @@
 
 ATM, or automated teller machine, is a machine that lets you get cash from your bank account without visiting a teller.
 
-This is a simple project, just to practice C# language.
+This is a simple project, to practice C# language.
 
-## How the program works?
+## How does the program work?
 #### Menu
 
 ![SimpleATMApp01](/screenshots/1.png)
 
-#### First you need to register an account:
+#### First, you need to register an account:
 
 ![SimpleATMApp01](/screenshots/2.png)
 
@@ -25,6 +25,6 @@ This is a simple project, just to practice C# language.
 
 ![SimpleATMApp01](/screenshots/5.png)
 
-#### Your account have an withdraw limit amount of $1000.00
+#### Your account has an withdraw limit amount of $1000.00
 
 ![SimpleATMApp01](/screenshots/6.png)
