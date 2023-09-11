@@ -29,7 +29,8 @@ static class MainMenuView
     }
     catch (Exception e)
     {
-      Console.WriteLine($"Exception: {e.Message}");
+      TextUtils.Error($"Exception: {e.Message}");
+      Menu();
     }
   }
 

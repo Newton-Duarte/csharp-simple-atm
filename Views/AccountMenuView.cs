@@ -4,7 +4,7 @@ static class AccountMenuView
 
   public static void Enter()
   {
-    TextUtils.Title("\tEnter");
+    TextUtils.Title("\t\tEnter");
     GetEnterValues();
   }
 
@@ -20,12 +20,14 @@ static class AccountMenuView
 
     if (account is null)
     {
-      throw new AccountException("Account does not exist");
+      TextUtils.Error($"Account does not exist");
+      MainMenuView.Show();
     }
 
     if (account.Pin.Number != accountPIN)
     {
-      throw new AccountException("Invalid credentials");
+      TextUtils.Error($"Invalid credentials");
+      MainMenuView.Show();
     }
 
     _account = account;
@@ -73,47 +75,47 @@ static class AccountMenuView
     switch(option)
     {
       case 1:
-        TextUtils.Title("\tDeposit");
+        TextUtils.Title("\t\tDeposit");
         Console.Write("Deposit amount: ");
 
         try
         {
           double depositAmount = double.Parse(Console.ReadLine());
           AccountService.Deposit(_account, depositAmount);
-          Console.WriteLine("Deposit done successfully.");
+          TextUtils.Success("Deposit done successfully.");
           Console.WriteLine(_account);
           AccountMenu();
         }
         catch(Exception e)
         {
-          Console.WriteLine($"{e.GetType()}: {e.Message}");
+          TextUtils.Error($"{e.GetType()}: {e.Message}");
           AccountMenu();
         }
         break;
       case 2:
-        TextUtils.Title("\tWithdraw");
+        TextUtils.Title("\t\tWithdraw");
         Console.Write("Withdraw amount: ");
 
         try
         {
           double withdrawAmount = double.Parse(Console.ReadLine());
           AccountService.Withdraw(_account, withdrawAmount);
-          Console.WriteLine("Withdraw done successfully.");
+          TextUtils.Success("Withdraw done successfully.");
           Console.WriteLine(_account);
           AccountMenu();
         }
         catch (Exception e)
         {
-          Console.WriteLine($"{e.GetType()}: {e.Message}");
+          TextUtils.Error($"{e.GetType()}: {e.Message}");
           AccountMenu();
         }
         break;
       case 3:
-        TextUtils.Title("\tThank you");
+        TextUtils.Title("\t\tThank you");
         MainMenuView.Show();
         break;
       default:
-        TextUtils.Title("\tInvalid option");
+        TextUtils.Title("\t\tInvalid option");
         GetOption();
         break;
     }
