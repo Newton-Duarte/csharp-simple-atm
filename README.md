@@ -25,6 +25,6 @@ This is a simple project, to practice C# language.
 
 ![SimpleATMApp01](/screenshots/5.png)
 
-#### Your account has an withdraw limit amount of $1000.00
+#### Your account has a withdraw limit amount of $1000.00
 
 ![SimpleATMApp01](/screenshots/6.png)
